@@ -28,11 +28,15 @@ export class AppComponent {
 
   post() {
     this.laoding = true;
-    this.http.post('https://craftuniversity.it/test/', {
+    this.http.post('https://admin.anticswiss.com/api/', {
       session: true,
-      request: "logout",
-      mail: "nothing00@nothmail.it",
-      password: "134"
+      request: "CREATE_CATEGORY",
+      name: "Prova",
+      type: "CAT",
+      visibility: "A",
+      super: null,
+      descr: "Questa è una categoria di prova!",
+      keywords: "prova,provetta,riprova,esame,traduci"
     }).subscribe(res => {
       this.data = res;
       console.log(res);
